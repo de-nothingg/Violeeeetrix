@@ -35,7 +35,7 @@ setTimeout(() => {
 
 setTimeout(() => {
     text.style.transform = 'translate(-50%, -100%)';
-    buttonsContainer.style.display = 'block';
     buttonsContainer.style.opacity = '1';
+    buttonsContainer.style.visibility = 'visible';
     buttonsContainer.style.transform = 'translate(-50%, -60%)';
-}, 3000);
+}, 4000);

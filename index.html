@@ -5,11 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Violetrix</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стилі для анімацій */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Стилі для тексту */
+        #main-text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            transition: transform 2s ease, opacity 2s ease;
+        }
+
+        /* Стилі для кнопок */
+        .buttons {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 2s ease, opacity 2s ease;
+        }
+
+        .btn {
+            display: block;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #3700b3;
+        }
+    </style>
 </head>
 <body>
     <div class="stars"></div>
     <div class="text" id="main-text">Violetrix</div>
-    <div class="buttons" id="buttons-container" style="display: none;">
+    <div class="buttons" id="buttons-container">
         <button class="btn">Test 1</button>
         <button class="btn">Test 2</button>
         <button class="btn">Test 3</button>
@@ -46,9 +102,11 @@
         }, 1000);
 
         setTimeout(() => {
-            text.style.transform = 'translate(-50%, -60%)';
+            text.style.transform = 'translate(-50%, -100%)';
             buttonsContainer.style.display = 'block';
-        }, 4000);
+            buttonsContainer.style.opacity = '1';
+            buttonsContainer.style.transform = 'translate(-50%, -60%)';
+        }, 3000);
     </script>
 </body>
 </html>

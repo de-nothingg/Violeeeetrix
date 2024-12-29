@@ -5,62 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Violetrix</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Стилі для анімацій */
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background-color: white;
-            border-radius: 50%;
-            animation: twinkle linear infinite;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
-        /* Стилі для тексту */
-        #main-text {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            transition: transform 2s ease, opacity 2s ease;
-        }
-
-        /* Стилі для кнопок */
-        .buttons {
-            display: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            transition: transform 2s ease, opacity 2s ease;
-        }
-
-        .btn {
-            display: block;
-            background-color: #6200ea;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            border-radius: 5px;
-        }
-
-        .btn:hover {
-            background-color: #3700b3;
-        }
-    </style>
 </head>
 <body>
     <div class="stars"></div>
@@ -72,41 +16,6 @@
         <button class="btn">Test 4</button>
     </div>
 
-    <script>
-        // Генерація зірок
-        const starsContainer = document.querySelector('.stars');
-        const numStars = 100;
-
-        for (let i = 0; i < numStars; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            const x = Math.random() * window.innerWidth;
-            const y = Math.random() * window.innerHeight;
-            const delay = Math.random() * 2;
-            const duration = 2 + Math.random() * 3;
-
-            star.style.left = `${x}px`;
-            star.style.top = `${y}px`;
-            star.style.animationDelay = `${delay}s`;
-            star.style.animationDuration = `${duration}s`;
-
-            starsContainer.appendChild(star);
-        }
-
-        const text = document.getElementById('main-text');
-        const buttonsContainer = document.getElementById('buttons-container');
-
-        // Анімація тексту
-        setTimeout(() => {
-            text.style.opacity = '1';
-        }, 1000);
-
-        setTimeout(() => {
-            text.style.transform = 'translate(-50%, -100%)';
-            buttonsContainer.style.display = 'block';
-            buttonsContainer.style.opacity = '1';
-            buttonsContainer.style.transform = 'translate(-50%, -60%)';
-        }, 3000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

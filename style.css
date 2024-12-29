@@ -36,17 +36,17 @@ body {
     }
 }
 
-/* Текст */
+/* Зменшення сяяння тексту */
 .text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #b19cd9;
+    color: #a079c7;
     font-size: 4rem;
-    text-shadow: 0 0 20px #b19cd9, 0 0 40px #b19cd9, 0 0 60px #b19cd9;
+    text-shadow: 0 0 10px #a079c7, 0 0 20px #a079c7;
     opacity: 0;
-    animation: fadeIn 2s ease-out forwards;
+    animation: fadeIn 1s ease-out forwards, moveUp 3s ease-out 4s forwards;
 }
 
 @keyframes fadeIn {
@@ -58,4 +58,37 @@ body {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
+}
+
+@keyframes moveUp {
+    to {
+        transform: translate(-50%, -60%);
+    }
+}
+
+/* Стилі для кнопок */
+.buttons {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(45deg, #6a0dad, #b19cd9);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #b19cd9, #6a0dad);
 }
